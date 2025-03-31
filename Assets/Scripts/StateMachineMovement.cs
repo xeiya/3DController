@@ -13,7 +13,8 @@ public class StateMachineMovement : MonoBehaviour
         Walk,
         Rise,
         Fall,
-        Jet
+        Jet,
+        Grappling
     }
 
     [SerializeField] private State stateCurrent;
@@ -205,6 +206,11 @@ public class StateMachineMovement : MonoBehaviour
         {
             stateCurrent = State.Rise;
         }
+    }
+
+    private void GrapplingState() 
+    {
+
     }
 
 
