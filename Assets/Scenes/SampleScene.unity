@@ -6645,9 +6645,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
-  jetFuelMax: 1.5
-  jetAccel: 3
-  jetRefuelSpeed: 10
+  jetFuelMax: 0
+  jetAccel: 0
+  jetRefuelSpeed: 0
 --- !u!114 &1867665255
 MonoBehaviour:
   m_ObjectHideFlags: 0
