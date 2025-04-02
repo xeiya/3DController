@@ -17,6 +17,8 @@ public class StateMachineMovement : MonoBehaviour
         Grappling
     }
 
+    public GrapplingGun grappling;
+
     [SerializeField] private State stateCurrent;
 
     [SerializeField] private float speedWalk;
@@ -32,7 +34,6 @@ public class StateMachineMovement : MonoBehaviour
     private CapsuleCollider capsuleCollider;
 
     private CameraSelector cameraSelector;
-    ////////////////////NEW///////////////
 
     //how many jumps total we're allowed
     private int jumpsAllowed = 2;
@@ -45,8 +46,6 @@ public class StateMachineMovement : MonoBehaviour
     [SerializeField] private float jetRefuelSpeed;
 
     private float jetFuelCurrent;
-
-    //////////////////////////////////////
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -83,6 +82,8 @@ public class StateMachineMovement : MonoBehaviour
                 break;
             case State.Jet:
                 JetState();
+                break;
+            case State.Grappling:
                 break;
         }
     }
@@ -208,11 +209,15 @@ public class StateMachineMovement : MonoBehaviour
         }
     }
 
-    private void GrapplingState() 
+    private void GrapplingState()
     {
-
+        
     }
 
+    public void SetState(State newState) 
+    {
+        stateCurrent = newState;
+    }
 
     private void RiseAtSpeed(float speed) 
     {

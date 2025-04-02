@@ -11,6 +11,8 @@ public class GrapplingGun : MonoBehaviour
     public Transform gunTip, cam, player;
     private SpringJoint joint;
 
+    StateMachineMovement stateMachine;
+
     private float maxDistance = 100f;
 
     public void Awake()
@@ -43,6 +45,7 @@ public class GrapplingGun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance))
         {
+
             grapplePoint = hit.point;
             //Adds a SpringJoint to our player
             joint = player.gameObject.AddComponent<SpringJoint>();
@@ -63,6 +66,8 @@ public class GrapplingGun : MonoBehaviour
             joint.massScale = 4.5f;
 
             lr.positionCount = 2;
+
+            stateMachine.SetState(StateMachineMovement.State.Grappling);
         }
     }
 
@@ -73,6 +78,8 @@ public class GrapplingGun : MonoBehaviour
     {
         lr.positionCount = 0;
         Destroy(joint);
+
+        stateMachine.SetState(StateMachineMovement.State.Rise);
     }
 
     /// <summary>
