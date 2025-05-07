@@ -209,11 +209,6 @@ public class StateMachineMovement : MonoBehaviour
         }
     }
 
-    private void GrapplingState()
-    {
-        
-    }
-
     public void SetState(State newState) 
     {
         stateCurrent = newState;

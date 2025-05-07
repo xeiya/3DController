@@ -28,6 +28,12 @@ public class FirstPersonCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If paused, do nothing
+        if (PauseManager.isPaused)
+        {
+            return;
+        }
+
         currentHorizontalRotation += Input.GetAxis("Mouse X") * sensitivity;
 
         //we use - here because screens start at 0 at the top and get bigger going down,

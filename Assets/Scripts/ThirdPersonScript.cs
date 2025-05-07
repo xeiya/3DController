@@ -46,6 +46,12 @@ public class ThirdPersonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If paused, do nothing
+        if (PauseManager.isPaused) 
+        {
+            return;
+        }
+
         //Update our desired rotation using inputs
         currentHorizontalRotation += Input.GetAxis("Mouse X") * sensitivity;
         currentVerticalRotation -= Input.GetAxis("Mouse Y") * sensitivity;
