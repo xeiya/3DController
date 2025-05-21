@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PauseManager : MonoBehaviour
+public class PauseManager : Menu
 {
     public static bool isPaused;
 
@@ -16,7 +16,8 @@ public class PauseManager : MonoBehaviour
         SetPaused(false);
     }
 
-    private void Update()
+    //override = replace the parent method with this new one
+    protected override void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) 
         {
