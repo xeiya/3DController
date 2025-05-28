@@ -2354,6 +2354,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OptionMenuContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 7472751437640332187, guid: d65b8b6fcf820624987621d0b99efbbd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7822160751148694149, guid: d65b8b6fcf820624987621d0b99efbbd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

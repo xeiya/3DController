@@ -6,6 +6,7 @@ public class RotateGun : MonoBehaviour
 
     void Update()
     {
+        //Rotates the gun based on where the grapple point is
         if (!grappling.IsGrappling()) return;
         transform.LookAt(grappling.GetGrapplePoint());
     }
